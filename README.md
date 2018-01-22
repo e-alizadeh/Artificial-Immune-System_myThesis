@@ -1,1 +1,1 @@
-# This repository contains the codes for my master's thesis. 
+# Codes for Negative Selection Algorithm and Dendritic Cell Algorithm.
