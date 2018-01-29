@@ -21,7 +21,7 @@ This file performs the generation/censoring phase of the Vdetector algorithm by 
 The necessary input arguments for this function are as follows:
 *	Sample_Data : self samples obtained from the simulation runs.
 	* Sample_Data should be normalized using the fuction normalization() before passing it to this function.
-  * Note that for the Fault Isolation task, self samples consist of the simulation data generated as a result of injecting the particular fault that needs to be isolated. Consequently, the generated detectors will be insensitive to the particular fault.
+	* Note that for the Fault Isolation task, self samples consist of the simulation data generated as a result of injecting the particular fault that needs to be isolated. Consequently, the generated detectors will be insensitive to the particular fault.
 *	Detector_Max_Num : A stopping criteria for the Vdetector algorithm. It is usually chosen to be a large number such that the algorithm does NOT stop at this criteria.
 *	 Self_Radius : A fixed threshold representing the radius of each data sample.
 *	Coverage : A stopping criteria that is usually considered for terminating the Vdetector algorithm.
