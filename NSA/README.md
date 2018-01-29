@@ -12,37 +12,39 @@ __4. SlidingWindow()__
 -----------------------------------------------
 
 ## 1. [ Ndata, MIN, MAX ] = normalization(DATA, Lower_Limits, Higher_Limits)
-*	This function normalizes DATA between [0,1] in case of positive numbers only, and between [-1,1] in case both positive and negative numbers are available. 
-*	If the arguments Lower_Limits and Higher_Limits are NOT provided, then the function assigns (and returns) the minimum and maximum of the DATA to MIN and MAX, respectively. 
+*	This function normalizes _DATA_ between [0,1] in case of positive numbers only, and between [-1,1] in case both positive and negative numbers are available. 
+*	If the arguments _Lower_Limits_ and _Higher_Limits_ are **_NOT_** provided, then the function assigns (and returns) the minimum and maximum of the _DATA_ to _MIN_ and _MAX_, respectively. 
 
 ## 2.	[Detector_Center, Detector_Radius] = Vdetector_NDim(Sample_Data,Detector_Max_Num,Self_Radius,coverage) 
 
 This file performs the generation/censoring phase of the Vdetector algorithm by generating a detector set. 
 The necessary input arguments for this function are as follows:
-*	Sample_Data : self samples obtained from the simulation runs.
-	* Sample_Data should be normalized using the fuction normalization() before passing it to this function.
+*	_Sample_Data_ : self samples obtained from the simulation runs.
+	* _Sample_Data_ should be normalized using the function normalization() before passing it to this function.
 	* Note that for the Fault Isolation task, self samples consist of the simulation data generated as a result of injecting the particular fault that needs to be isolated. Consequently, the generated detectors will be insensitive to the particular fault.
-*	Detector_Max_Num : A stopping criteria for the Vdetector algorithm. It is usually chosen to be a large number such that the algorithm does NOT stop at this criteria.
-*	 Self_Radius : A fixed threshold representing the radius of each data sample.
-*	Coverage : A stopping criteria that is usually considered for terminating the Vdetector algorithm.
-The output arguments are Detector_Center and Detector_Radius that are the centers and radii of the generated detectors in the detector set, respectively.
-## 3.	[ResidualSignal, FaultySamples, FaultyDetector] = 
-NSA_DetectionPhase(Sample_Data,Detector_Center,Detector_Radius, Self_Radius)
+*	_Detector_Max_Num_ : A stopping criteria for the Vdetector algorithm. It is usually chosen to be a large number such that the algorithm does **_NOT_** stop at this criteria.
+*	 _Self_Radius_ : A fixed threshold representing the radius of each data sample.
+*	_Coverage_ : A stopping criteria that is usually considered for terminating the Vdetector algorithm.
+
+The output arguments are _Detector_Center_ and _Detector_Radius_ that are the centers and radii of the generated detectors in the detector set, respectively.
+
+## 3.	[ResidualSignal, FaultySamples, FaultyDetector] = NSA_DetectionPhase(Sample_Data,Detector_Center,Detector_Radius, Self_Radius)
 This file performs the monitoring phase of the NSA by checking the new incoming sample data against detectors in the detector set. 
 The necessary input arguments for this function are as follows:
-*	Sample_Data : Simulation output data that need to be checked if there is an anomaly or not.
-	* Similar to Vdetector_NDim(), Sample_Data should be normalized using the fuction normalization() before passing it to this function.
-*	Detector_Center & Detector_Radius : centers and radii of detectors in the detectors set that are generated using Vdetector_NDim() function. 
-*	Self_Radius : A fixed threshold representing the radius of each data sample (Same as Self_Radius variable used in  Vdetector_NDim()).
+*	_Sample_Data_ : Simulation output data that need to be checked if there is an anomaly or not.
+	* Similar to __Vdetector_NDim()__, _Sample_Data_ should be normalized using the function __normalization()__ before passing it to this function.
+*	_Detector_Center_ & _Detector_Radius_ : centers and radii of detectors in the detectors set that are generated using __Vdetector_NDim()__ function. 
+*	_Self_Radius_ : A fixed threshold representing the radius of each data sample (Same as _Self_Radius_ variable used in  __Vdetector_NDim()__).
+
 The output arguments for this function are as follows:
-*	ResidualSignal : The main output argument that is a binary residual signal showing the presence of an anomaly, if ResidualSignal is 1 for a time sample.
-*	FaultySamples : This optional output argument returns data samples that have been identified as anomaly in the monitoring phase. 
-*	FaultyDetector : This optional output argument returns the indices of detectors that have identified FaultySamples.
+*	_ResidualSignal_ : The **_main_** output argument that is a binary residual signal showing the presence of an anomaly, if _ResidualSignal_ is 1 for a time sample.
+*	_FaultySamples_ : This **_optional_** output argument returns data samples that have been identified as anomaly in the monitoring phase. 
+*	_FaultyDetector_ : This **_optional_** output argument returns the indices of detectors that have identified _FaultySamples_.
 
 ## 4. [FilteredResidual] = SlidingWindow(DATA, WindowSize, NumFaultySamp)
-*	DATA : This should be ResidualSignal that is main output of NSA_DetectionPhase(). 
-*	WindowSize : Size of the moving window.
-*	NumFaultySamp : Number of faulty samples in a window above which all samples in the window is set to one.
+*	_DATA_ : This should be the _ResidualSignal_ that is main output of __NSA_DetectionPhase()__. 
+*	_WindowSize_ : Size of the moving window.
+*	_NumFaultySamp_ : Number of faulty samples in a window above which all samples in the window is set to one.
 
 
 
