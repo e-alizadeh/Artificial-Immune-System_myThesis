@@ -8,8 +8,8 @@ The codes here are used in my thesis as well as the following peer-reviewed publ
 
 [___A Dendritic Cell Immune System Inspired Scheme for Sensor Fault Detection and Isolation of Wind Turbines___](http://ieeexplore.ieee.org/document/8019842/)
 
-[___A sensor fault detection and isolation strategy by using a Dendritic Cell Algorithm___](http://ieeexplore.ieee.org/abstract/document/7844400/)
+[___A Sensor Fault Detection and Isolation Strategy by Using a Dendritic Cell Algorithm___](http://ieeexplore.ieee.org/abstract/document/7844400/)
 
-[___A negative selection immune system inspired methodology for fault diagnosis of wind turbines___](http://ieeexplore.ieee.org/abstract/document/7502133/)
+[___A Negative Selection Immune System Inspired Methodology for Fault Diagnosis of Wind Turbines___](http://ieeexplore.ieee.org/abstract/document/7502133/)
 
-[___Fault detection and isolation of the wind turbine based on the real-valued negative selection algorithm___](http://ieeexplore.ieee.org/abstract/document/6705740/)
+[___Fault Detection and Isolation of the Wind Turbine based on the Real-Valued Negative Selection Algorithm___](http://ieeexplore.ieee.org/abstract/document/6705740/)
