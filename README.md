@@ -4,7 +4,7 @@ The codes as well as a detailed description of the codes for the NSA and DCA alg
 
 The title of my master thesis was [___Fault Detection and Isolation of Wind Turbines using Immune System Inspired Algorithms___](https://spectrum.library.concordia.ca/982044/) that is freely available on the Concordia University Repository.
 
-The codes here are used in my thesis as well as the following peer-reviewed publications:
+The codes here are used in my thesis as well as in the following peer-reviewed publications:
 
 [___A Dendritic Cell Immune System Inspired Scheme for Sensor Fault Detection and Isolation of Wind Turbines___](http://ieeexplore.ieee.org/document/8019842/)
 
